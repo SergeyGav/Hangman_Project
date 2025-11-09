@@ -9,6 +9,7 @@ list_of_words = [
     "cat",
     "dog",
     "avocado",
+    "tomato",
     "epic"
 ]
 

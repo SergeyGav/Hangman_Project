@@ -23,7 +23,6 @@ def choose_random_word(word_list):
 # # It should return a string with underscores separated by spaces (e.g., "_ _ _ _").
 # # The number of underscores should match the length of the word.
 # def initialize_secret_word_display(word):
-#     ...
 
 
 # --- FUNCTION 3 ---
@@ -34,7 +33,13 @@ def choose_random_word(word_list):
 #   if we input the word="Ice Cream", the set will be {"i", "c", "e", "c", "r", "a", "m"}
 
 def initialize_letters_to_be_guessed(word):
-    ...
+    letters_set = set()
+    for letter in word:
+        if letter.isalpha():
+            letters_set.add(letter.lower())
+        else:
+            continue
+    return letters_set
 
 
 # --- FUNCTION 4 ---
@@ -70,8 +75,8 @@ if __name__ == "__main__":
     # print(result)  # Expected: {"c", "a", "t"}
 
     ###Test 2.2###
-    # result = initialize_letters_to_be_guessed("python")
-    # print(result)  # Expected: {"p", "y", "t", "h", "o", "n"}
+    result = initialize_letters_to_be_guessed("python")
+    print(result)  # Expected: {"p", "y", "t", "h", "o", "n"}
 
     ###Test 2.3###
     # result = initialize_letters_to_be_guessed("banana")

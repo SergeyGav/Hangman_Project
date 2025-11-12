@@ -8,13 +8,15 @@ import random
 # Write a function that returns a random word from a given word list.
 # The function receives a list of words and returns one random word.
 
-def choose_random_word(word_list):
-    # OP1
-    # random.choice(...)
+# def choose_random_word(word_list):
+#     # OP1
+#     random_word = random.choice(word_list)
+#     print(random_word)
+#     return random_word
 
     # OP2
     # random.randrange()
-    ...
+
 
 
 # WILL CREATE DISPLAY OF WORD IN RUNTIME
@@ -22,7 +24,14 @@ def choose_random_word(word_list):
 # # Write a function that creates the initial display for a word.
 # # It should return a string with underscores separated by spaces (e.g., "_ _ _ _").
 # # The number of underscores should match the length of the word.
-# def initialize_secret_word_display(word):
+# word = "asdfgffdf"
+# def initialize_secret_word_display(word:str):
+#     word_length = len(word)
+#     for i in range(word_length):
+#         print("_", end = " ")
+#     return word_length
+# initialize_secret_word_display(word)
+
 
 
 # --- FUNCTION 3 ---
@@ -32,22 +41,24 @@ def choose_random_word(word_list):
 #   if we input the word="Armageddon", the set will be {"a", "r", "m", "g", "e", "d", "o", "n"}
 #   if we input the word="Ice Cream", the set will be {"i", "c", "e", "c", "r", "a", "m"}
 
-def initialize_letters_to_be_guessed(word):
-    letters_set = set()
-    for letter in word:
-        if letter.isalpha():
-            letters_set.add(letter.lower())
-        else:
-            continue
-    return letters_set
+# def initialize_letters_to_be_guessed(word:str):
+#     letters_set = set()
+#     for letter in word:
+#         if letter.isalpha():
+#             letters_set.add(letter.lower())
+#         else:
+#             continue
+#     return letters_set
 
 
 # --- FUNCTION 4 ---
 # Write a function that returns the alphabet as a list/tuple.
 # So if the input is "abcde", the function will return ["a", "b", "c", "d", "e"]
-def initialize_alphabet_display(alphabet: str):
-    ...
-
+# def initialize_alphabet_display(alphabet: str):
+#     alpha_list =[]
+#     for i in alphabet:
+#         alpha_list.append(i)
+#     return alpha_list
 
 # Test your functions here!
 if __name__ == "__main__":
@@ -75,8 +86,8 @@ if __name__ == "__main__":
     # print(result)  # Expected: {"c", "a", "t"}
 
     ###Test 2.2###
-    result = initialize_letters_to_be_guessed("python")
-    print(result)  # Expected: {"p", "y", "t", "h", "o", "n"}
+    # result = initialize_letters_to_be_guessed("python")
+    # print(result)  # Expected: {"p", "y", "t", "h", "o", "n"}
 
     ###Test 2.3###
     # result = initialize_letters_to_be_guessed("banana")

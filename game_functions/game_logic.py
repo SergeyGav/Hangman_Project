@@ -6,12 +6,12 @@
 # Write a function that checks if a letter exists in a word.
 # Return True if the letter is in the word, False otherwise.
 
-def check_letter_in_word(letter, word):
-    # if letter in word:
-    #     x = True
-    # else:
-    #     x = False
-    # return x
+# def check_letter_in_word(letter, word):
+#     if letter in word:
+#         x = True
+#     else:
+#         x = False
+#     return x
 
 
 # --- FUNCTION 2 ---
@@ -22,24 +22,35 @@ def check_letter_in_word(letter, word):
 # For example: if the word is "python", and the guessed letters are {"a", "b", "f", "y", "o"}
 # the function should return "_ y _ _ o _".
 
-def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
-    ...
+# def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
+#     guessed_word = []
+#     for i in word:
+#         if i in guessed_letters:
+#             guessed_word.append(i)
+#         else:
+#             guessed_word.append("_")
+#     return guessed_word
 
 
 # --- FUNCTION 3 ---
 # Write a function that adds a letter to the guessed letters set.
 # It should modify the set in place (set.add("a")).
 
-def update_guessed_letters(letter: str, guessed_letters: set):
-    ...
+# def update_guessed_letters(letter: str, guessed_letters: set):
+#     guessed_letters = guessed_letters.add(letter)
+#     return guessed_letters
 
 
 # --- FUNCTION 4 ---
 # Write a function that counts how many times a letter appears in a word.
 # Return the count.
 
-def count_letter_occurrences(letter, word):
-    ...
+# def count_letter_occurrences(letter, word):
+#     count = 0
+#     for i in word:
+#         if i == letter:
+#             count = count + 1
+#     return count
 
 
 # --- FUNCTION 5 ---
@@ -54,8 +65,16 @@ def count_letter_occurrences(letter, word):
 #       then the function will return "a b c\u0336 d e\u0336"
 #       (it will look like this if printed: "a b c̶ d e̶"
 
-def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
-    ...
+# def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
+#     string_return = []
+#     for i in letters_alphabet:
+#         if i in guessed_letters:
+#             x = i + "\u0336"
+#         else:
+#             x = i
+#         string_return.append(x)
+#     return string_return
+
 
 
 # --- FUNCTION 6 ---
@@ -63,8 +82,8 @@ def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_lette
 # The function will remove the letter from the set.
 # (The function will not return anything!)
 
-def update_letters_to_be_guessed(hidden_letters, letter):
-    ...
+# def update_letters_to_be_guessed(hidden_letters, letter):
+#     hidden_letters.discard(letter)
 
 
 # Test your functions here!
@@ -93,7 +112,7 @@ if __name__ == "__main__":
     # result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
     # print(result)  # Expected: "c _ _"
 
-    ###Test 2.2###
+    ##Test 2.2###
     # result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
     # print(result)  # Expected: "_ a n a n a"
 

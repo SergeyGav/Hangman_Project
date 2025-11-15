@@ -24,8 +24,17 @@
 # Note:
 #   This function requires the alphabet_display_with_guessed_letters_marked function
 #   from game_logic.py to work properly
+from game_functions.game_logic import alphabet_display_with_guessed_letters_marked
+from game_functions.game_logic import get_hidden_word_with_visible_guessed_letters
 
-# def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
+def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
+    alphabet_with_strikethroughs = alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters)
+    current_display = get_hidden_word_with_visible_guessed_letters(hidden_word,guessed_letters)
+    print(f"Word:", current_display)
+    print(f"Letters:", alphabet_with_strikethroughs)
+    print(f"Attempts remaining:", attempts_remain)
+
+
 
 
 
@@ -49,7 +58,7 @@
 
 # Test your functions here!
 if __name__ == "__main__":
-    ### --- Test Function 1: show_hangman --- ###
+    ## --- Test Function 1: show_hangman --- ###
 
     ###Test 1.1 - No incorrect guesses (empty gallows)###
     # print(show_hangman(0))
@@ -70,10 +79,10 @@ if __name__ == "__main__":
     ### --- Test Function 2: display_game_status --- ###
 
     ###Test 2.1 - Mid-game status###
-    # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    # guessed_letters = {"a", "e", "i", "t"}
-    # hidden_word = "but"
-    # display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
+    letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    guessed_letters = {"a", "e", "i", "t"}
+    hidden_word = "but"
+    display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
     # Expected output:
     # Word: _ _ t
     # Letters: a̶ b c d e̶ f g h i̶ j k l m n o p q r s t̶ u v w x y z

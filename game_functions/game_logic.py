@@ -22,14 +22,14 @@
 # For example: if the word is "python", and the guessed letters are {"a", "b", "f", "y", "o"}
 # the function should return "_ y _ _ o _".
 
-# def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
-#     guessed_word = []
-#     for i in word:
-#         if i in guessed_letters:
-#             guessed_word.append(i)
-#         else:
-#             guessed_word.append("_")
-#     return guessed_word
+def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
+    guessed_word = []
+    for i in word:
+        if i in guessed_letters:
+            guessed_word.append(i)
+        else:
+            guessed_word.append("_")
+    return guessed_word
 
 
 # --- FUNCTION 3 ---
@@ -65,15 +65,15 @@
 #       then the function will return "a b c\u0336 d e\u0336"
 #       (it will look like this if printed: "a b c̶ d e̶"
 
-# def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
-#     string_return = []
-#     for i in letters_alphabet:
-#         if i in guessed_letters:
-#             x = i + "\u0336"
-#         else:
-#             x = i
-#         string_return.append(x)
-#     return string_return
+def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
+    string_return = []
+    for i in letters_alphabet:
+        if i in guessed_letters:
+            x = i + "\u0336"
+        else:
+            x = i
+        string_return.append(x)
+    return string_return
 
 
 
@@ -171,9 +171,9 @@ if __name__ == "__main__":
     # print(result)  # Expected: "a̶ b c d e̶ f g h i j k l m n o p q r s t̶ u v w x y z"
 
     ###Test 5.2###
-    # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    # result = alphabet_display_with_guessed_letters_marked(letters_alphabet, set())
-    # print(result)  # Expected: "a b c d e f g h i j k l m n o p q r s t u v w x y z"
+    letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    result = alphabet_display_with_guessed_letters_marked(letters_alphabet, set())
+    print(result)  # Expected: "a b c d e f g h i j k l m n o p q r s t u v w x y z"
 
     ###Test 5.3###
     # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]

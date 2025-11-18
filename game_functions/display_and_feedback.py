@@ -6,12 +6,17 @@
 # Write a function that returns the hangman ASCII art based on incorrect guesses.
 # Use the stages from the "ascii_art.py" file.
 
-# from common.ascii_art import hangman_7_stages
+# from game_functions.ascii_art import hangman_7_stages
 #
-#
+# #
+# #
 # def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
-#     x = incorrect_guesses
-#     return x
+#     hangman_draw = hangman_art[incorrect_guesses]
+#
+#     return hangman_draw
+
+
+
 
 # --- FUNCTION 2 ---
 # Write a function that displays the current game status.
@@ -26,7 +31,7 @@
 #   from game_logic.py to work properly
 from game_functions.game_logic import alphabet_display_with_guessed_letters_marked
 from game_functions.game_logic import get_hidden_word_with_visible_guessed_letters
-
+#
 def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
     alphabet_with_strikethroughs = alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters)
     current_display = get_hidden_word_with_visible_guessed_letters(hidden_word,guessed_letters)

@@ -6,12 +6,17 @@
 # Write a function that returns the hangman ASCII art based on incorrect guesses.
 # Use the stages from the "ascii_art.py" file.
 
-# from common.ascii_art import hangman_7_stages
+from game_functions.ascii_art import hangman_7_stages
+
 #
 #
-# def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
-#     x = incorrect_guesses
-#     return x
+def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
+    hangman_draw = hangman_art[incorrect_guesses]
+
+    return hangman_draw
+
+
+
 
 # --- FUNCTION 2 ---
 # Write a function that displays the current game status.
@@ -24,15 +29,15 @@
 # Note:
 #   This function requires the alphabet_display_with_guessed_letters_marked function
 #   from game_logic.py to work properly
-from game_functions.game_logic import alphabet_display_with_guessed_letters_marked
-from game_functions.game_logic import get_hidden_word_with_visible_guessed_letters
-
-def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
-    alphabet_with_strikethroughs = alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters)
-    current_display = get_hidden_word_with_visible_guessed_letters(hidden_word,guessed_letters)
-    print(f"Word:", current_display)
-    print(f"Letters:", alphabet_with_strikethroughs)
-    print(f"Attempts remaining:", attempts_remain)
+# from game_functions.game_logic import alphabet_display_with_guessed_letters_marked
+# from game_functions.game_logic import get_hidden_word_with_visible_guessed_letters
+#
+# def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
+#     alphabet_with_strikethroughs = alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters)
+#     current_display = get_hidden_word_with_visible_guessed_letters(hidden_word,guessed_letters)
+#     print(f"Word:", current_display)
+#     print(f"Letters:", alphabet_with_strikethroughs)
+#     print(f"Attempts remaining:", attempts_remain)
 
 
 
@@ -65,7 +70,7 @@ if __name__ == "__main__":
     # Expected: empty gallows (stage 0)
 
     ###Test 1.2 - Three incorrect guesses###
-    # print(show_hangman(3))
+    print(show_hangman(3))
     # Expected: head, body, one arm (stage 3)
 
     ###Test 1.3 - Six incorrect guesses (full hangman)###
@@ -79,10 +84,10 @@ if __name__ == "__main__":
     ### --- Test Function 2: display_game_status --- ###
 
     ###Test 2.1 - Mid-game status###
-    letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    guessed_letters = {"a", "e", "i", "t"}
-    hidden_word = "but"
-    display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
+    # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    # guessed_letters = {"a", "e", "i", "t"}
+    # hidden_word = "but"
+    # display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
     # Expected output:
     # Word: _ _ t
     # Letters: a̶ b c d e̶ f g h i̶ j k l m n o p q r s t̶ u v w x y z

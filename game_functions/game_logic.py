@@ -23,12 +23,21 @@
 # the function should return "_ y _ _ o _".
 
 def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
+<<<<<<< Updated upstream
     guessed_word = []
     for i in word:
         if i in guessed_letters:
             guessed_word.append(i)
         else:
             guessed_word.append("_")
+=======
+    guessed_word = ""
+    for i in word:
+        if i in guessed_letters:
+            guessed_word = guessed_word + (i + " ")
+        else:
+            guessed_word = guessed_word + ("_ ")
+>>>>>>> Stashed changes
     return guessed_word
 
 
@@ -66,13 +75,21 @@ def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
 #       (it will look like this if printed: "a b c̶ d e̶"
 
 def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
+<<<<<<< Updated upstream
     string_return = []
+=======
+    string_return = ""
+>>>>>>> Stashed changes
     for i in letters_alphabet:
         if i in guessed_letters:
             x = i + "\u0336"
         else:
             x = i
+<<<<<<< Updated upstream
         string_return.append(x)
+=======
+        string_return = string_return + (x + " ")
+>>>>>>> Stashed changes
     return string_return
 
 
@@ -111,20 +128,20 @@ if __name__ == "__main__":
     ###Test 2.1###
     # result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
     # print(result)  # Expected: "c _ _"
-
-    ##Test 2.2###
+    #
+    # #Test 2.2###
     # result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
     # print(result)  # Expected: "_ a n a n a"
-
-    ###Test 2.3###
+    #
+    # ###Test 2.3###
     # result = get_hidden_word_with_visible_guessed_letters("hello", {"e", "l"})
     # print(result)  # Expected: "_ e l l _"
-
-    ###Test 2.4###
+    # #
+    # # ###Test 2.4###
     # result = get_hidden_word_with_visible_guessed_letters("python", {"y", "o"})
     # print(result)  # Expected: "_ y _ _ o _"
-
-    ###Test 2.5###
+    # #
+    # # ###Test 2.5###
     # result = get_hidden_word_with_visible_guessed_letters("word", set())
     # print(result)  # Expected: "_ _ _ _"
 

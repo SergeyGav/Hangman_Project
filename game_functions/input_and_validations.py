@@ -1,17 +1,18 @@
+
 # ========================================
 # HANGMAN GAME - INPUT & VALIDATION
 # ========================================
-from main_game import inserted_letter
+# from main_game import inserted_letter
 
 
 # --- FUNCTION 1 ---
 # Write a function that asks the user to input a letter.
 # The function will return the user's input (as lowercase).
 
-# def get_letter_from_user():
-#     inserted_letter = input("Input a letter: ")
-#     inserted_letter = inserted_letter.lower()
-#     return inserted_letter
+def get_letter_from_user():
+    inserted_letter = input("Input a letter: ")
+    inserted_letter = inserted_letter.lower()
+    return inserted_letter
 
 
 
@@ -21,12 +22,12 @@ from main_game import inserted_letter
 # Return True if valid, False otherwise.
 # (you can use .isalpha())
 
-# def is_valid_letter(input_letter):
-#
-#     if len(input_letter) == 1 and input_letter.isalpha():
-#         return True
-#     else:
-#         return False
+def is_valid_letter(input_letter):
+
+    if len(input_letter) == 1 and input_letter.isalpha():
+        return True
+    else:
+        return False
 
 
 # --- FUNCTION 3 ---
@@ -34,13 +35,13 @@ from main_game import inserted_letter
 # The function receives a letter and a set of guessed letters.
 # Return True if the letter is in the set, False otherwise.
 
-# def is_already_guessed(letter, guessed_letters):
-#     returned_letter_status = False
-#     for i in guessed_letters:
-#         if letter == i:
-#             returned_letter_status = True
-#             break
-#     return returned_letter_status
+def is_already_guessed(letter, guessed_letters):
+    returned_letter_status = False
+    for i in guessed_letters:
+        if letter == i:
+            returned_letter_status = True
+            break
+    return returned_letter_status
 
 # --- FUNCTION 4 ---
 # Write a function that keeps asking for input until a valid, new letter is entered. (looping until all conditions are met)
@@ -48,7 +49,19 @@ from main_game import inserted_letter
 # Return the valid letter.
 
 def get_valid_guess(guessed_letters):
-    ...
+
+    while True:
+        letter = get_letter_from_user()
+        if is_valid_letter(letter) == False:
+            print("Invalid input, enter a letter")
+            continue
+        if is_already_guessed(letter, guessed_letters) == True:
+            print("You already guessed this letter.")
+            continue
+
+        return letter
+
+
 
 
 # Test your functions here!
@@ -57,9 +70,9 @@ if __name__ == "__main__":
     # This function requires user input, so test it manually by uncommenting:
 
     ###Test 1.1###
-    # print("Please enter a letter:")
-    # letter = get_letter_from_user()
-    # print(f"You entered: {letter}")  # Expected: lowercase version of your input
+    print("Please enter a letter:")
+    letter = get_letter_from_user()
+    print(f"You entered: {letter}")  # Expected: lowercase version of your input
 
     ### --- Test Function 2: is_valid_letter --- ###
 
